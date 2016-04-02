@@ -1,12 +1,21 @@
 [user]
 	name = Brian Mitchell
 	email = bman4789@gmail.com
+[github]
+    user = bman4789
 [filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
 	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain
+[color]
+    ui = auto
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f

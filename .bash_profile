@@ -1,4 +1,3 @@
-export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export TERM="xterm-color"
 export LSCOLORS=Exfxcxdxbxegedabagacad
@@ -13,4 +12,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(thefuck --alias)"
 
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi

@@ -7,6 +7,8 @@ set ts=4 " number of spaces in a tab
 set sw=4 " number of spaces for indent
 set et   " expand tabs into spaces
 
+set backspace=indent,eol,start " make backspace work like most other apps
+
 " Show the cursor position at the end of the status line
 set ruler
 
