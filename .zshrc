@@ -57,6 +57,7 @@ export PATH="/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
