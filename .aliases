@@ -6,3 +6,5 @@ alias ydla="youtube-dl -x --audio-quality 0"
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
+# Use the default mongod config
+alias mongod="mongod --config /usr/local/etc/mongod.conf"
