@@ -1,6 +1,7 @@
 [user]
 	name = Brian Mitchell
 	email = bman4789@gmail.com
+	signingkey = 1ED7FCF6
 [github]
     user = bman4789
 [filter "media"]
@@ -15,7 +16,7 @@
 [credential]
 	helper = osxkeychain
 [color]
-    ui = auto
+	ui = auto
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
