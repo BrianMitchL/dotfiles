@@ -3,9 +3,7 @@ export TERM="xterm-color"
 export LSCOLORS=Exfxcxdxbxegedabagacad
 export GREP_OPTIONS='--color=always'
 
-export PS1="\[\e[00;37m\][\u@\h \[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]]\\$ \[\e[0m\]"
-
-alias ll='ls -lah'
+export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;3m\]\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]]\\$ \[$(tput sgr0)\]"
 
 eval "$(thefuck --alias)"
 

@@ -1,3 +1,6 @@
+# List everything and make it readable
+alias ll='ls -lah'
+
 # Download the highest quality version of a video
 alias ydl="youtube-dl -f bestvideo+bestaudio/best"
 # Download the highest quality version of the audio from a video
