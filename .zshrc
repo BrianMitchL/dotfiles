@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx thefuck textmate heroku)
+plugins=(git brew osx thefuck textmate)
 
 # User configuration
 
@@ -57,7 +57,7 @@ plugins=(git brew osx thefuck textmate heroku)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.paths
+source $HOME/.path
 source $HOME/.aliases
 
 # You may need to manually set your language environment

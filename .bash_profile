@@ -7,8 +7,8 @@ export PS1="[\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\
 
 eval "$(thefuck --alias)"
 
-if [ -f ~/.paths ]; then
-    . ~/.paths
+if [ -f ~/.path ]; then
+    . ~/.path
 fi
 
 if [ -f ~/.aliases ]; then
