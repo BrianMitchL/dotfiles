@@ -26,6 +26,9 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool fa
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+# Set screensaver
+defaults -currentHost write com.apple.screensaver.Basic MESSAGE "👋👨‍💻🚴‍♂️🚈🚀🔊🇩🇰"
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
