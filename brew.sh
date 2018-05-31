@@ -2,10 +2,8 @@
 
 # Install command-line tools and cask applications using Homebrew.
 
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-
-cask_args appdir: '~/Applications'
+brew tap caskroom/cask
+brew tap caskroom/fonts
 
 # Make sure we’re using the latest Homebrew.
 brew update
