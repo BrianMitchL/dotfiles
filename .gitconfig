@@ -1,25 +1,25 @@
 [user]
-	name = Brian Mitchell
-	email = bman4789@gmail.com
-	signingkey = 1ED7FCF6
+    name = Brian Mitchell
+    email = bman4789@gmail.com
+    signingkey = 1ED7FCF6
 [github]
-    user = bman4789
+    user = BrianMitchL
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
 [push]
-	default = simple
+    default = simple
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [color]
-	ui = auto
+    ui = auto
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [commit]
-	gpgsign = true
+    gpgsign = true
