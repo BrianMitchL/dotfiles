@@ -68,6 +68,7 @@ plugins=(
   osx
   thefuck
   extract
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
