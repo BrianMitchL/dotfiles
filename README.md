@@ -6,3 +6,7 @@ The configuration and other goodies that make my macOS environment work how I li
 
 Some of this has been inspired by other dotfiles repositories scattered around the Internet.
 
+## Themes
+
+Included in this repo is my custom [Brian Theme.terminal](Brian%20Theme.terminal) and [brian.zsh-theme](brian.zsh-theme).
+![Screenshot of Terminal and zsh themes](brian-theme.png?raw=true)
