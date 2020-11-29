@@ -1,15 +1,19 @@
-# Automatically created by GitHub for Mac
-# To make edits, delete these initial comments, or else your changes may be lost!
-
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
+# VSCode
+.vscode/
 
-# Thumbnails
-._*
+# WebStorm
+.idea/
+
+# npm
+npm-debug.log
+
+# yarn
+yarn-error.log
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -25,3 +29,8 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# vim
+*~
+*.swp
+*.un~

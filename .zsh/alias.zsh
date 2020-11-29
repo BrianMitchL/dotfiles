@@ -1,5 +1,5 @@
 # List everything and make it readable
-alias l='ls -lah'
+alias l='ls -lahF'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -13,4 +13,8 @@ alias ydla="youtube-dl -f bestaudio -x --audio-quality 0 --audio-format mp3"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+alias bubo='brew update && brew outdated'
+alias bubc='brew upgrade && brew cleanup'
+alias bubu='bubo && bubc'
 

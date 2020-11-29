@@ -1,106 +1,132 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# This config is a hodgepodge of stuff from all over
+export EDITOR="vim"
+export VISUAL="vim"
+export GPG_TTY="tty"
+export ZSH="$HOME/.zsh"
+export ZSH_CACHE_DIR="$ZSH/cache"
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/brianmitchell/.oh-my-zsh"
+# general configuration
+setopt auto_cd
+setopt correct
+setopt correct_all
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="brian"
+## History file configuration
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
+setopt inc_append_history     # add commands to HISTFILE in order of execution
 
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  brew
-  osx
-  thefuck
-  extract
-  colored-man-pages
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-source $HOME/.path
-source $HOME/.aliases
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mate -w'
+# completion
+if type brew &>/dev/null; then
+  fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+autoload -Uz compinit && compinit
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+if [[ -f $ZSH/completion.zsh ]]; then
+  source $ZSH/completion.zsh
+fi
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# key bindings
+if [[ -f '$ZSH/key-bindings.zsh' ]]; then
+  source '$ZSH/key-bindings.zsh'
+fi
+
+alias -- -='cd -'
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+function d () {
+  if [[ -n $1 ]]; then
+    dirs "$@"
+  else
+    dirs -v | head -10
+  fi
+}
+compdef _dirs d
+
+# colorized man pages
+function colored() {
+  command env \
+  LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+  LESS_TERMCAP_md=$(printf "\e[1;31m") \
+  LESS_TERMCAP_me=$(printf "\e[0m") \
+  LESS_TERMCAP_se=$(printf "\e[0m") \
+  LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+  LESS_TERMCAP_ue=$(printf "\e[0m") \
+  LESS_TERMCAP_us=$(printf "\e[1;32m") \
+  PAGER="${commands[less]:-$PAGER}" \
+  _NROFF_U=1 \
+  PATH="$HOME/bin:$PATH" \
+    "$@"
+}
+
+function man() {
+  colored man "$@"
+}
+
+# ls colors
+autoload -U colors && colors
+# Enable ls colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+if [[ "$OSTYPE" == (darwin|freebsd)* ]]; then
+  # this is a good alias, it works by default just using $LSCOLORS
+  ls -G . &>/dev/null && alias ls='ls -G'
+
+  # only use coreutils ls if there is a dircolors customization present ($LS_COLORS or .dircolors file)
+  # otherwise, gls will use the default color scheme which is ugly af
+  [[ -n "$LS_COLORS" || -f "$HOME/.dircolors" ]] && gls --color -d . &>/dev/null && alias ls='gls --color=tty'
+else
+  # For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
+  if [[ -z "$LS_COLORS" ]]; then
+    (( $+commands[dircolors] )) && eval "$(dircolors -b)"
+  fi
+
+  ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
+
+  # Take advantage of $LS_COLORS for completion as well.
+  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+fi
+
+# enable diff color if possible.
+if command diff --color . . &>/dev/null; then
+  alias diff='diff --color'
+fi
+
+# aliases
+if [[ -f $ZSH/alias.zsh ]]; then
+  source $ZSH/alias.zsh
+fi
+
+alias vizsh='vim $HOME/.zshrc'
+
+# PATH config
+# ideally, this would be in ~/.zshenv
+# on macOS /usr/libexec/path_helper runs after that file, changing the order
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# 🚀 starship
+eval "$(starship init zsh)"
+

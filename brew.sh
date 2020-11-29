@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
+# ask for sudo access up front
+sudo -v
+
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install command-line tools and cask applications using Homebrew.
 
-brew tap caskroom/cask
-brew tap caskroom/fonts
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap mas-cli/tap
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -11,22 +18,10 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Install Bash 4.
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
-brew install bash
-brew install bash-completion2
-
-# Add `/usr/local/bin/bash` to `/etc/shells`
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-fi;
-
 # Install zsh
 # Note: don’t forget to add `/usr/local/bin/zsh` to `/etc/shells` before
 # running `chsh`.
 brew install zsh
-
 
 # Add `/usr/local/bin/zsh` to `/etc/shells`
 # Switch to using brew-installed zsh as default shell
@@ -35,11 +30,10 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
   chsh -s /usr/local/bin/zsh;
 fi;
 
-# Install `wget` with IRI support.
-brew install wget
+brew install starship
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install curl
@@ -53,16 +47,13 @@ brew install nmap
 brew install mas
 brew install trash
 brew install youtube-dl
-brew install thefuck
+brew install wget
 
 # Install development environments
 brew install node
+brew install node@14
 brew install ruby
-brew install python3
-brew install python@2
-
-# Install mkvtoolnix with Qt GUI
-brew install mkvtoolnix --with-qt
+brew install python
 
 # Install Applications via cask
 brew cask install 1password
@@ -70,8 +61,8 @@ brew cask install docker
 brew cask install font-fira-code
 brew cask install google-chrome
 brew cask install firefox
+brew cask install firefox-developer-edition
 brew cask install mactex
-brew cask install pycharm
 brew cask install slack
 brew cask install textmate
 brew cask install transmission
@@ -96,6 +87,9 @@ brew cask install pacifist
 brew cask install gpg-suite
 brew cask install screens
 brew cask install screens-connect
+brew cask install spotify
+brew cask install discord
 
 # Remove outdated versions from the cellar.
 brew cleanup
+

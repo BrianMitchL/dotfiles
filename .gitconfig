@@ -2,17 +2,12 @@
     name = Brian Mitchell
     email = bman4789@gmail.com
     signingkey = 1ED7FCF6
-[github]
-    user = BrianMitchL
-[filter "media"]
-    clean = git-media-clean %f
-    smudge = git-media-smudge %f
-[filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
+[core]
+    excludesFile = /Users/brianmitchell/.gitignore_global
 [push]
     default = simple
+[pull]
+    rebase = true
 [credential]
     helper = osxkeychain
 [color]
@@ -23,3 +18,6 @@
     required = true
 [commit]
     gpgsign = true
+[init]
+    defaultBranch = main
+

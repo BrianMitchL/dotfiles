@@ -1,5 +1,0 @@
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export GPG_TTY=`tty`
-export PATH="/usr/local/sbin:$PATH"

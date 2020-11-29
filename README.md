@@ -6,6 +6,6 @@ Some of this has been inspired by other dotfiles repositories scattered around t
 
 ## Themes
 
-Included in this repo is my custom [Brian Theme.terminal](Brian%20Theme.terminal) and [brian.zsh-theme](brian.zsh-theme). The Terminal theme is an ever branching fork of the Pro theme. Notably, it uses Dank Mono 12pt and has a background opacity of 90% and blur of 40% for a subtle transparancy effect. The zsh theme prints the hostname followed by the return status of the previous command and if in a git directory, git prompt info.
+Included in this repo is my custom [Brian Theme.terminal](Brian%20Theme.terminal). It uses a dark gray background with an opacity of 90% and blur of 40% and the DejaVu Sans Mono Nerd Font at 12pt (checkout [Nerd Fonts](https://www.nerdfonts.com/)). I use the [Starship](https://starship.rs) prompt.
 ![Screenshot of Terminal and zsh themes](brian-theme.png?raw=true)
 
