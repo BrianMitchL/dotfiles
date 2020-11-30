@@ -10,8 +10,8 @@ Things should run without extra dependencies added but there are some things to 
 
 1. Install [Starship](https://starship.rs)
 2. Initialize git submodules for zsh plugins with either of the following
-  - Clone with `git clone --recurse-submodules`
-  - Initialize and update the submodules `git submodule update --init`
+   - Clone with `git clone --recurse-submodules`
+   - Initialize and update the submodules `git submodule update --init`
 3. Setup GPG for git commit signing (or disable by editing .gitconfig)
 
 I like to link my zsh, vim, and git configs to make it easier to keep up to
