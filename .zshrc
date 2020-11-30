@@ -28,14 +28,17 @@ setopt share_history          # share command history data
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 
 # completion
-if type brew &>/dev/null; then
-  fpath=($(brew --prefix)/share/zsh-completions $fpath)
-fi
+fpath=($ZSH/zsh-completions/src $fpath)
 
 autoload -Uz compinit && compinit
 
 if [[ -f $ZSH/completion.zsh ]]; then
   source $ZSH/completion.zsh
+fi
+
+# autosuggestions
+if [[ -f $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # key bindings

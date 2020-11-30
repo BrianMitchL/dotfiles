@@ -6,10 +6,17 @@ Some of this has been inspired by other dotfiles repositories scattered around t
 
 ## Initial Setup
 
+Things should run without extra dependencies added but there are some things to do for the _full experience_.
+
+1. Install [Starship](https://starship.rs)
+2. Initialize git submodules for zsh plugins (`git submodule init`)
+3. Setup GPG for git commit signing (or disable by editing .gitconfig)
+
 I like to link my zsh, vim, and git configs to make it easier to keep up to
 date with this repo.
 
 ```sh
+ln -s "${HOME}/.dotfiles/.config" "${HOME}/.config
 ln -s "${HOME}/.dotfiles/.zsh" "${HOME}/.zsh"
 ln -s "${HOME}/.dotfiles/.zshrc" "${HOME}/.zshrc"
 ln -s "${HOME}/.dotfiles/.vimrc" "${HOME}/.vimrc"
