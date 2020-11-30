@@ -1,15 +1,17 @@
 # dotfiles
 
-Most files should be copied into `$HOME`. This could be scripted in the future.
-
-Some of this has been inspired by other dotfiles repositories scattered around the Internet.
+Most files should be copied into `$HOME`.
+I use symbolic links for some of the files (see below), but this could be fully scripted in the future.
 
 ## Initial Setup
 
+For a new macOS system, run the [brew.sh](brew.sh) file to install homebrew and standard cli and cask packages/apps.
 Things should run without extra dependencies added but there are some things to do for the _full experience_.
 
 1. Install [Starship](https://starship.rs)
-2. Initialize git submodules for zsh plugins (`git submodule init`)
+2. Initialize git submodules for zsh plugins with either of the following
+  - Clone with `git clone --recurse-submodules`
+  - Initialize and update the submodules `git submodule update --init`
 3. Setup GPG for git commit signing (or disable by editing .gitconfig)
 
 I like to link my zsh, vim, and git configs to make it easier to keep up to
