@@ -128,7 +128,9 @@ alias vizsh='vim $HOME/.zshrc'
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+# use the earliest version of node installed
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="/usr/local/opt/node@12/bin:$PATH"
 
 # 🚀 starship
 if (( $+commands[starship] )); then
