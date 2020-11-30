@@ -18,7 +18,7 @@ I like to link my zsh, vim, and git configs to make it easier to keep up to
 date with this repo.
 
 ```sh
-ln -s "${HOME}/.dotfiles/.config" "${HOME}/.config
+ln -s "${HOME}/.dotfiles/.config" "${HOME}/.config"
 ln -s "${HOME}/.dotfiles/.zsh" "${HOME}/.zsh"
 ln -s "${HOME}/.dotfiles/.zshrc" "${HOME}/.zshrc"
 ln -s "${HOME}/.dotfiles/.vimrc" "${HOME}/.vimrc"
