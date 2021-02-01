@@ -15,7 +15,7 @@ alias ydla="youtube-dl -f bestaudio -x --audio-quality 0 --audio-format mp3"
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # flush DNS on macOS
-alias flushdns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderH    elper; sudo dscacheutil -flushcache"
+alias flushdns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache"
 
 alias bubo='brew update && brew outdated'
 alias bubc='brew upgrade && brew cleanup'
