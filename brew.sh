@@ -10,7 +10,6 @@ sudo -v
 
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
-brew tap mas-cli/tap
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -25,9 +24,9 @@ brew install zsh
 
 # Add `/usr/local/bin/zsh` to `/etc/shells`
 # Switch to using brew-installed zsh as default shell
-if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/zsh;
+if ! fgrep -q '/opt/homebrew/bin/zsh' /etc/shells; then
+  echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells;
+  chsh -s /opt/homebrew/bin/zsh;
 fi;
 
 brew install starship
@@ -44,20 +43,16 @@ brew install imagemagick
 brew install ssh-copy-id
 brew install tree
 brew install nmap
-brew install mas
 brew install trash
 brew install youtube-dl
 brew install wget
 
 # Install development environments
 brew install node
-brew install node@14
-brew install ruby
-brew install python
+brew install node@16
 
 # Install Applications via cask
 brew cask install 1password
-brew cask install docker
 brew cask install font-fira-code
 brew cask install google-chrome
 brew cask install firefox
@@ -78,7 +73,6 @@ brew cask install bettertouchtool
 brew cask install coconutbattery
 brew cask install daisydisk
 brew cask install drivedx
-brew cask install intel-power-gadget
 brew cask install keka
 brew cask install gitup
 brew cask install imageoptim
