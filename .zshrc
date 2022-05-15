@@ -1,7 +1,7 @@
 # This config is a hodgepodge of stuff from all over
 export EDITOR="vim"
 export VISUAL="vim"
-export GPG_TTY="tty"
+export GPG_TTY=$(tty)
 export ZSH="$HOME/.zsh"
 export ZSH_CACHE_DIR="$ZSH/cache"
 
@@ -124,12 +124,11 @@ alias vizsh='vim $HOME/.zshrc'
 # PATH config
 # ideally, this would be in ~/.zshenv
 # on macOS /usr/libexec/path_helper runs after that file, changing the order
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-# use the earliest version of node installed
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 
 # 🚀 starship
 if (( $+commands[starship] )); then
