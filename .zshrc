@@ -125,12 +125,11 @@ alias vizsh='vim $HOME/.zshrc'
 # ideally, this would be in ~/.zshenv
 # on macOS /usr/libexec/path_helper runs after that file, changing the order
 
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH:
 # use the earliest version of node installed
-export PATH="/usr/local/opt/node@14/bin:$PATH"
-export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 
 # 🚀 starship
 if (( $+commands[starship] )); then
