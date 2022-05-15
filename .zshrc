@@ -126,7 +126,7 @@ alias vizsh='vim $HOME/.zshrc'
 # on macOS /usr/libexec/path_helper runs after that file, changing the order
 
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH:
+export PATH="/opt/homebrew/sbin:$PATH"
 # use the earliest version of node installed
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
