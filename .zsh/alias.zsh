@@ -1,5 +1,5 @@
 # List everything and make it readable
-alias l='ls -lahF'
+alias l='ls -lAhF'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -7,9 +7,9 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Download the highest quality version of a video
-alias ydl="youtube-dl -f bestvideo+bestaudio/best"
+alias ydl="yt-dlp -f bestvideo+bestaudio/best"
 # Download the highest quality version of the audio from a video
-alias ydla="youtube-dl -f bestaudio -x --audio-quality 0 --audio-format mp3"
+alias ydla="yt-dlp -f bestaudio -x --audio-quality 0 --audio-format mp3"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
