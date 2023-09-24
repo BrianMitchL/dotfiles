@@ -8,8 +8,8 @@ sudo -v
 
 # Install command-line tools and cask applications using Homebrew.
 
-brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap yt-dlp/taps
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -44,45 +44,42 @@ brew install ssh-copy-id
 brew install tree
 brew install nmap
 brew install trash
-brew install youtube-dl
+brew install yt-dlp
 brew install wget
 
 # Install development environments
 brew install node
-brew install node@16
+brew install node@18
 
 # Install Applications via cask
-brew cask install 1password
-brew cask install font-fira-code
-brew cask install google-chrome
-brew cask install firefox
-brew cask install firefox-developer-edition
-brew cask install mactex
-brew cask install slack
-brew cask install textmate
-brew cask install transmission
-brew cask install transmit
-brew cask install vlc
-brew cask install webstorm
-brew cask install xld
-brew cask install xquartz
-brew cask install fantastical
-brew cask install private-internet-access
-brew cask install appcleaner
-brew cask install bettertouchtool
-brew cask install coconutbattery
-brew cask install daisydisk
-brew cask install drivedx
-brew cask install keka
-brew cask install gitup
-brew cask install imageoptim
-brew cask install istumbler
-brew cask install pacifist
-brew cask install gpg-suite
-brew cask install screens
-brew cask install screens-connect
-brew cask install spotify
-brew cask install discord
+brew install --cask 1password
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask firefox-developer-edition
+brew install --cask mactex
+brew install --cask slack
+brew install --cask textmate
+brew install --cask transmission
+brew install --cask transmit
+brew install --cask vlc
+brew install --cask xld
+brew install --cask xquartz
+brew install --cask fantastical
+brew install --cask private-internet-access
+brew install --cask appcleaner
+brew install --cask bettertouchtool
+brew install --cask coconutbattery
+brew install --cask daisydisk
+brew install --cask drivedx
+brew install --cask keka
+brew install --cask imageoptim
+brew install --cask istumbler
+brew install --cask pacifist
+brew install --cask gpg-suite
+brew install --cask screens
+brew install --cask screens-connect
+brew install --cask spotify
+brew install --cask discord
 
 # Remove outdated versions from the cellar.
 brew cleanup
