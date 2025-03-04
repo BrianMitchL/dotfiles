@@ -1,24 +1,27 @@
 [user]
-    name = Brian Mitchell
-    email = bman4789@gmail.com
-    signingkey = 1ED7FCF6
+  name = Brian Mitchell
+  email = bman4789@gmail.com
+  signingkey = 1ED7FCF6
 [core]
-    excludesFile = /Users/brianmitchell/.gitignore_global
+  excludesFile = /Users/brianmitchell/.gitignore_global
 [push]
-    default = simple
+	autoSetupRemote = true
 [pull]
-    rebase = true
+  rebase = true
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
 [color]
-    ui = auto
-[filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+  ui = auto
 [commit]
-    gpgsign = true
+  gpgsign = true
 [init]
-    defaultBranch = main
+	defaultBranch = main
 [tag]
 	gpgsign = true
+	sort = version:refname
+[diff]
+	algorithm = histogram
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
