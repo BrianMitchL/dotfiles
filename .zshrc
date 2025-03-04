@@ -128,7 +128,7 @@ if [[ -f /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 # 🚀 starship
 if (( $+commands[starship] )); then
