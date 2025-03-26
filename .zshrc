@@ -8,7 +8,6 @@ export ZSH_CACHE_DIR="$ZSH/cache"
 # general configuration
 setopt auto_cd
 setopt correct
-setopt correct_all
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
