@@ -129,6 +129,16 @@ fi
 
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
+# Set an NPM_TOKEN
+if [[ -f "${HOME}/.npmrc" ]]; then
+  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
+fi
+
+# Set a FONT_AWESOME_NPM_AUTH_TOKEN
+if [[ -f "${HOME}/.farc" ]]; then
+  export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.farc")
+fi
+
 # 🚀 starship
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"

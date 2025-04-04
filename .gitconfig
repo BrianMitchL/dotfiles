@@ -1,6 +1,6 @@
 [user]
   name = Brian Mitchell
-  email = bman4789@gmail.com
+	email = bman4789@gmail.com
 	signingkey = /Users/brianmitchell/.ssh/id_ed25519.pub
 [core]
   excludesFile = /Users/brianmitchell/.gitignore_global
@@ -13,11 +13,11 @@
 [color]
   ui = auto
 [commit]
-  gpgsign = true
+	gpgsign = true
 [init]
 	defaultBranch = main
 [tag]
-	gpgsign = true
+	gpgSign = true
 	sort = version:refname
 [diff]
 	algorithm = histogram
