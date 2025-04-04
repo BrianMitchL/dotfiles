@@ -1,7 +1,7 @@
 [user]
   name = Brian Mitchell
   email = bman4789@gmail.com
-  signingkey = 1ED7FCF6
+	signingkey = /Users/brianmitchell/.ssh/id_ed25519.pub
 [core]
   excludesFile = /Users/brianmitchell/.gitignore_global
 [push]
@@ -25,3 +25,5 @@
 	ui = auto
 [branch]
 	sort = -committerdate
+[gpg]
+	format = ssh
